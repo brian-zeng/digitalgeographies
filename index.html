@@ -3,35 +3,122 @@
 <html>
 
 <head>
-  <title> Worst HTML Page of All Time </title>
+  <title> Underground Beef </title>
   <style>
     body {background-color: pink}
-    h1 {font-family: Papyrus; color: red; text-align: center;}
-    p {font-family: Courier New; font-size: 20px; text-align: right;}
-    p {color: green}
-
+    h1 {font-family: Papyrus; color: PowderBlue; text-align: center;
+        text-shadow: 1px 1px green}
+    p {font-family: Courier New; font-size: 20px; text-align: left; color: SlateBlue;
+       text-shadow: 0.5px 0.5px black}
+    p1 {text-align: center;}
+    #BoxText {font-family: cursive; color: pink; outline: 2px dashed green;
+          text-shadow: 1px 1px green}
+    #BoxHeader {font-family: fantasy; color: green; text-shadow: 2px 2px pink;
+       }
+    .myBox {
+      border: 2px outset white;
+      background-color: lightblue;
+      text-align: center;
+      width: 320px;
+      margin: 0 auto;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
   </style>
   <meta charset="UTF-8">
 </head>
 
 <body>
-  <h1>This is a Heading</h1>
-  <p>This is a paragraph.</p>
+  <h1>I-Iello and VVelcome</h1>
+  <p><b>모르겠다고 그래?<b></p><br>
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/pJ8xm7oZjdo" frameborder="5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div style="text-align:center;">
+  <iframe width="560" height="315" src=
+  "https://www.youtube.com/embed/pJ8xm7oZjdo" frameborder="5" allow=
+  "accelerometer; autoplay; clipboard-write; encrypted-media;
+   gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <br><br>
+  <hr>
 
-  <a href="https://brian-zeng.github.io/digitalgeographies/studio1.html">Dis my studio1 yo</a>
-  <p id="change"> Watch me change! </p>
+  <a href="https://brian-zeng.github.io/digitalgeographies/studio1.html">Dis my studio1</a><br>
+  <a href="https://brian-zeng.github.io/digitalgeographies/studio2.html">Dis my studio2</a><br>
+  <a href="https://brian-zeng.github.io/digitalgeographies/index.html">Dis my studio3</a><br><br>
+  <p class="myBox"> Watch me change! </p>
 
+  <button id="change">Color Switch</button>
+  </div>
 
-  <script>
-  function changeCSS (){
-    document.getElementById("change").style.color = "blue"; //document find "change" and make it red
-  }
-  </script>
+  <div class="myBox">
+    <h2 id="BoxHeader">Lovely poem of foam</h2>
+    <p1 id="BoxText">Let's write a poem<br>
+      It isn't quite the haiku<br>
+      It's jelly, aiyu<br>
+    </p1>
+      <br>
+  </div><br>
+  <hr>
+  <p>Browser shortcuts ftw</p>
+  <table style="width: 480px;
+  margin: 0 auto;">
+  <tr>
+    <th>Shortcut</th>
+    <th>Function</th>
+  </tr>
+  <tr>
+    <td>Ctrl+Shift+R</td>
+    <td>Reload page (along with the page's cache)</td>
+  </tr>
+  <tr>
+    <td>Ctrl+L</td>
+    <td>Go to address bar</td>
+  </tr>
+</table><br>
 
-<button onclick="changeCSS()">Click Here!</button>
+<p1>
+  <audio controls>
+  <source src="Sleepdealer - Dreamland - 01 A1.Dreams.flac" type="audio/flac">
+</audio></p1>
+
 </body>
+
+<script>
+var theToggle = document.getElementById("change");
+var toggleMe = document.getElementsByClassName("myBox")[0];
+var toggleMe2 = document.getElementsByClassName("myBox")[1];
+var toggle3 = document.getElementById("BoxText");
+toggleMe.toggleStatus = "on";
+toggleMe2.toggleStatus ="on";
+
+theToggle.onclick = function(){
+  switch(toggleMe.toggleStatus){
+    case "on":
+      toggleMe.toggleStatus="off";
+      toggleMe.style.color = "pink";
+      toggleMe.style.backgroundColor = "black";
+      break;
+    case "off":
+      toggleMe.toggleStatus="on";
+      toggleMe.style.color = "SlateBlue";
+      toggleMe.style.backgroundColor = "lightblue";
+      break;
+  }
+  switch(toggleMe2.toggleStatus){
+    case "on":
+      toggleMe2.toggleStatus="off";
+      toggle3.style.color = "yellow";
+      toggleMe2.style.backgroundColor = "SlateBlue";
+      break;
+    case "off":
+      toggleMe2.toggleStatus="on";
+      toggle3.style.color = "pink";
+      toggleMe2.style.backgroundColor = "lightblue";
+      break;
+  }
+
+}
+</script>
 
 
 
