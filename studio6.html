@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--This is how you comment for html-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title> My Map </title>
+    <!--This where you put all your dependencies-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='map'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYnJpYW56ZW5nNTUiLCJhIjoiY2tsc2M3M2V1MDJhdjMybXNhYWJ4M3kzOSJ9.-I2av-X-FwRH2veItaQhkg';
+    //variables (var) up the top
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+      center: [-117.85, 34.05],
+      zoom: 12 // starting zoom
+    });
+    var geolocate = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    });
+    var geojson = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          properties: {
+            Title: 'cpp'
+          },
+          geometry: {
+            type: 'Point',
+            coordinates: [
+              -117.82115936279297,
+              34.05664164035593
+            ]
+          }
+        },
+        {
+          type: 'Feature',
+          properties: {
+            Title: 'Claremont'
+          },
+          geometry: {
+            type: 'Point',
+            coordinates: [
+              -117.72047996520998,
+              34.09950975059633
+            ]
+          }
+        },
+        {
+          type: 'Feature',
+          properties: {
+            Title: 'asian food colima road'
+          },
+          geometry: {
+            type: 'Point',
+            coordinates: [
+              -117.89913654327391,
+              33.98813565253805
+            ]
+          }
+        }
+      ]
+    };
+    var popup = new mapboxgl.Popup();
+    // map.on(functions) at the bottom!
+    map.addControl(geolocate);
+    map.on('load', function() {
+      geolocate.trigger();
+      map.addLayer({
+        id: 'geojson',
+        type: 'symbol',
+        source: {
+          type: 'geojson',
+          data: geojson
+        },
+        layout: {
+          'icon-image': 'park-15', // more icons here: https://labs.mapbox.com/maki-icons/editor/
+          'icon-allow-overlap': true
+        },
+        paint: { }
+      })
+    });
+    map.on('mousemove', function(e) {
+      var features = map.queryRenderedFeatures(e.point, { layers: ['geojson'] });
+      if (!features.length) {
+        popup.remove();
+        return;
+      }
+      var feature = features[0];
+
+      popup.setLngLat(feature.geometry.coordinates)
+      .setHTML(feature.properties.Title)
+      .addTo(map);
+    });
+    </script>
+  </body>
+</html>
