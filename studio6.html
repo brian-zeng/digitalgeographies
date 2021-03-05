@@ -39,49 +39,176 @@
       trackUserLocation: true
     });
     var geojson = {
-      type: 'FeatureCollection',
-      features: [
-        {
-          type: 'Feature',
-          properties: {
-            Title: 'cpp'
-          },
-          geometry: {
-            type: 'Point',
-            coordinates: [
-              -117.82115936279297,
-              34.05664164035593
+  type: 'FeatureCollection',
+  features: [
+    {
+      type: 'Feature',
+      properties: {
+        title: 'CPP '
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          -117.82115936279297,
+          34.05664164035593
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Claremont'
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          -117.72047996520998,
+          34.09950975059633
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'asian food here'
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          -117.89913654327391,
+          33.98813565253805
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        stroke: '#555555',
+        'stroke-width': 2,
+        'stroke-opacity': 1,
+        fill: '#555555',
+        'fill-opacity': 0.5
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [
+              -122.44142532348633,
+              37.77471756940714
+            ],
+            [
+              -122.41979598999023,
+              37.77471756940714
+            ],
+            [
+              -122.41979598999023,
+              37.78397752550851
+            ],
+            [
+              -122.44142532348633,
+              37.78397752550851
+            ],
+            [
+              -122.44142532348633,
+              37.77471756940714
             ]
-          }
-        },
-        {
-          type: 'Feature',
-          properties: {
-            Title: 'Claremont'
-          },
-          geometry: {
-            type: 'Point',
-            coordinates: [
-              -117.72047996520998,
-              34.09950975059633
+          ]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        stroke: '#a75bc2',
+        'stroke-width': 2,
+        'stroke-opacity': 1,
+        fill: '#555555',
+        'fill-opacity': 0.5
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [
+              -122.26624488830565,
+              37.87424363412914
+            ],
+            [
+              -122.27002143859863,
+              37.86943313301452
+            ],
+            [
+              -122.26547241210936,
+              37.86760370508706
+            ],
+            [
+              -122.25234031677245,
+              37.86943313301452
+            ],
+            [
+              -122.23843574523926,
+              37.87539539764788
+            ],
+            [
+              -122.24667549133301,
+              37.8799345255841
+            ],
+            [
+              -122.26058006286621,
+              37.87722463210631
+            ],
+            [
+              -122.26624488830565,
+              37.87424363412914
             ]
-          }
-        },
-        {
-          type: 'Feature',
-          properties: {
-            Title: 'asian food colima road'
-          },
-          geometry: {
-            type: 'Point',
-            coordinates: [
-              -117.89913654327391,
-              33.98813565253805
+          ]
+        ]
+      }
+    },
+    {
+      type: 'Feature',
+      properties: {
+        stroke: '#00f0e0',
+        'stroke-width': 5,
+        'stroke-opacity': 1,
+        fill: '#555555',
+        'fill-opacity': 0.3
+      },
+      geometry: {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [
+              -118.267822265625,
+              34.164090803573124
+            ],
+            [
+              -118.10714721679686,
+              33.99347299511967
+            ],
+            [
+              -117.74734497070311,
+              33.996888718429396
+            ],
+            [
+              -117.67593383789062,
+              34.129994745824746
+            ],
+            [
+              -118.17306518554688,
+              34.1902217928623
+            ],
+            [
+              -118.267822265625,
+              34.164090803573124
             ]
-          }
-        }
-      ]
-    };
+          ]
+        ]
+      }
+    }
+  ]
+};
     var popup = new mapboxgl.Popup();
     // map.on(functions) at the bottom!
     map.addControl(geolocate);
