@@ -96,7 +96,7 @@
           data: geojson
         },
         layout: {
-          'icon-image': 'park-15', // more icons here: https://labs.mapbox.com/maki-icons/editor/
+          'icon-image': 'museum-15', // more icons here: https://labs.mapbox.com/maki-icons/editor/
           'icon-allow-overlap': true
         },
         paint: { }
@@ -111,7 +111,7 @@
       var feature = features[0];
 
       popup.setLngLat(feature.geometry.coordinates)
-      .setHTML(feature.properties.Title)
+      .setHTML(feature.properties.title)
       .addTo(map);
     });
     </script>
